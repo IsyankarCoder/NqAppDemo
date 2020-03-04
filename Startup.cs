@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +27,8 @@ namespace NqApp
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+           
+            services.AddDbContext<NqApp.Data.NgAppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +44,7 @@ namespace NqApp
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -67,6 +71,7 @@ namespace NqApp
 
                 if (env.IsDevelopment())
                 {
+                    spa.Options.StartupTimeout = new System.TimeSpan(0, 5, 0);
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
