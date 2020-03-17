@@ -15,9 +15,9 @@ export class FetchEmployeeComponent {
   }
 
   getEmployees() {
-    this._employeeService.getEmployess().subscribe(
+   /* this._employeeService.getEmployess().subscribe(
       data => this.empList = data
-    )
+    )*/
   }
 
   delete(employeeId) {

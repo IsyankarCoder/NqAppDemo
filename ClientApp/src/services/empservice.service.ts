@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Http, Response } from '@angular/http';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/throw'
@@ -16,14 +16,14 @@ export class EmployeeService{
   }
 
   getCityList() {
-    return this._http.get(this.myAppUrl + "api/Employee/GetCityList").map(res => res.json()).catch(this.errorHandler);
+   // return this._http.get(this.myAppUrl + "api/Employee/GetCityList").map(res => res.json()).catch(this.errorHandler);
   }
 
   getEmployess() {
-    return this._http.get(this.myAppUrl + 'api/Employee/Index').map((response: Response) => response.json()).catch(this.errorHandler);
+    //return this._http.get(this.myAppUrl + 'api/Employee/Index').map((response: Response) => response.json()).catch(this.errorHandler);
   }
   getEmployeeById(id: number) {
-    return this._http.get(this.myAppUrl + "api/Employee/Details/" + id).map((response: Response) => response.json()).catch(this.errorHandler);
+    //return this._http.get(this.myAppUrl + "api/Employee/Details/" + id).map((response: Response) => response.json()).catch(this.errorHandler);
   }
 
   saveEmployee(employee) {
