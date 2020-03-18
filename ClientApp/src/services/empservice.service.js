@@ -1,18 +1,15 @@
-import { Injectable, Inject } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router'; 
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/throw'
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("rxjs/add/operator/map");
+require("rxjs/add/operator/catch");
+require("rxjs/add/operator/throw");
 /*
 @Injectable()
 
 export class EmployeeService{
   myAppUrl: string = "";
   constructor(private _http: Http,@Inject('BASE_URL') baseUrl: string) {
-    this.myAppUrl = baseUrl; 
+    this.myAppUrl = baseUrl;
   }
 
   getCityList() {
@@ -37,3 +34,4 @@ export class EmployeeService{
   }
 }
 */
+//# sourceMappingURL=empservice.service.js.map
