@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { EmployeeService } from '../../services/empservice.service'
 
@@ -10,7 +10,7 @@ import { EmployeeService } from '../../services/empservice.service'
 export class FetchEmployeeComponent {
   public empList: EmployeeData[];
 
-  constructor(public http: Http, private _router: Router, private _employeeService: EmployeeService) {
+  constructor(public http: HttpClientModule, private _router: Router, private _employeeService: EmployeeService) {
     this.getEmployees();
   }
 
