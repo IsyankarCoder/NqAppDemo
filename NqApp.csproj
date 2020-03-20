@@ -32,7 +32,6 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\addemployee\addemployee.component.ts" />
-    <None Remove="ClientApp\src\app\fetchemployee\fetchemployee.component.ts" />
     <None Remove="ClientApp\src\services\empservice.service.ts" />
   </ItemGroup>
 
@@ -43,7 +42,6 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\addemployee\addemployee.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\fetchemployee\fetchemployee.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\services\empservice.service.ts" />
   </ItemGroup>
 

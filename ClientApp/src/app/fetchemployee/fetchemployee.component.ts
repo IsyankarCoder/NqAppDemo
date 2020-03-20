@@ -6,8 +6,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   templateUrl: './fetchemployee.component.html'
 })
-
 export class FetchEmployeeComponent {
+
   public empList: EmployeeData[];
 
   constructor(public http: HttpClientModule, private _router: Router) {
