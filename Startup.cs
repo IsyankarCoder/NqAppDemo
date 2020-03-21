@@ -72,7 +72,7 @@ namespace NqApp
                 if (env.IsDevelopment())
                 {
                     spa.Options.StartupTimeout = new System.TimeSpan(0, 15, 0);
-                    spa.UseAngularCliServer(npmScript: "start");
+                  spa.UseAngularCliServer(npmScript: "start");
                 }
             });
         }

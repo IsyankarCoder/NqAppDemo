@@ -1,26 +1,30 @@
 import { Injectable, Inject } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router'; 
-import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/throw'
+import 'rxjs/add/operator/throw';
+import {map} from 'rxjs/operators'
 
-/*
 @Injectable()
 
 export class EmployeeService{
   myAppUrl: string = "";
-  constructor(private _http: Http,@Inject('BASE_URL') baseUrl: string) {
+  constructor(private _http: HttpClient,@Inject('BASE_URL') baseUrl: string) {
     this.myAppUrl = baseUrl; 
   }
 
   getCityList() {
-   // return this._http.get(this.myAppUrl + "api/Employee/GetCityList").map(res => res.json()).catch(this.errorHandler);
+    return this._http.get(this.myAppUrl + "api/Employee/GetCityList")
+      .pipe(map((res: any) => res.json()))
+      .subscribe(d => { console.log('a'); })
   }
 
   getEmployess() {
-    //return this._http.get(this.myAppUrl + 'api/Employee/Index').map((response: Response) => response.json()).catch(this.errorHandler);
+    return this._http.get(this.myAppUrl + 'api/Employee/Index').pipe(map((response: any) => response.json())).subscribe(d => {
+      console.log('b');
+    })
+
   }
   getEmployeeById(id: number) {
     //return this._http.get(this.myAppUrl + "api/Employee/Details/" + id).map((response: Response) => response.json()).catch(this.errorHandler);
@@ -36,4 +40,4 @@ export class EmployeeService{
     return Observable.throw(error);
   }
 }
-*/
+

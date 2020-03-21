@@ -1,7 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
-//import { EmployeeService } from '../../services/empservice.service'
+import { EmployeeService } from '../../services/empservice.service';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
   templateUrl: './fetchemployee.component.html'
@@ -10,14 +11,14 @@ export class FetchEmployeeComponent {
 
   public empList: EmployeeData[];
 
-  constructor(public http: HttpClientModule, private _router: Router) {
+  constructor(public http: HttpClientModule, private _router: Router, public _employeeService: EmployeeService) {
     this.getEmployees();
   }
 
   getEmployees() {
-   /* this._employeeService.getEmployess().subscribe(
+    this._employeeService.getEmployess().add(
       data => this.empList = data
-    )*/
+    )
   }
 
   delete(employeeId) {
