@@ -16,7 +16,7 @@ namespace NqApp.Data
         public NgAppDbContext(DbContextOptions options) 
             : base(options)
         { 
-
+//
         }
 
         public DbSet<TblEmployee> TblEmployee { get; set; }
